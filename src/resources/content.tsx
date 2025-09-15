@@ -1,21 +1,21 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Logo, Row, Text } from "@once-ui-system/core";
+import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Salih Arya",
+  lastName: "Gumilang",
+  name: `Salih Arya Gumilang`,
+  role: "Software Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "saliharya@gmail.com",
+  location: "Asia/Jakarta",
+  languages: ["English", "Bahasa"],
 };
 
 const newsletter: Newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>My weekly newsletter about software engineering</>,
 };
 
 const social: Social = [
@@ -24,17 +24,17 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/saliharya",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/aryagumilang/",
   },
   {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/saliharya",
   },
   {
     name: "Email",
@@ -49,12 +49,14 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline:
+    <>I'm Salih Arya Gumilang, <br />
+      a Software Engineer</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Feggyfy</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -65,14 +67,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Selene, a design engineer at{" "}
-      <Logo
-        dark
-        icon="/trademarks/wordmark-dark.svg"
-        style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}
-      />
-      , where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Specialize in building <br />
+      scalable apps and intuitive UI, integrating RESTful APIs, and delivering
+      production-ready projects.
     </>
   ),
 };
@@ -98,9 +95,15 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Salih Arya Gumilang is a{" "}
+        <strong>Frontend & Mobile Developer</strong> with expertise in{" "}
+        <strong>Kotlin, React, Flutter, and React Native</strong>He is passionate about
+        crafting scalable applications, building intuitive user interfaces, and
+        integrating RESTful APIs to deliver production-ready solutions. With a
+        background in{" "}
+        <strong>Bangkit Academy (led by Google, Tokopedia, Gojek, and Traveloka)</strong>{" "}
+        and proven experience across freelance and industry projects, Arya bridges
+        design and engineering to create impactful digital products.
       </>
     ),
   },
@@ -109,41 +112,76 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "getgoing.co.id",
+        timeframe: "Sep 2024 – May 2025",
+        role: "React Native & React Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Enhanced app stability by resolving bugs, ensuring seamless performance for end-users.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Translated Figma designs into responsive, reusable React UI components.
+          </>,
+          <>
+            Refactored code to follow modern best practices, significantly improving readability and scalability.
+          </>,
+          <>
+            Designed and deployed backend features using Cloud Functions integrated with Firestore.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Telehealth Indonesia (Freelance)",
+        timeframe: "Mar 2024 – May 2024",
+        role: "Android Developer (Kotlin)",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Integrated medical test data (ketone, spirometer, hematocrit) via API into the ATM Sehat App,
+            enhancing diagnostic capabilities for remote users.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Built <strong>Tea App</strong> to synchronize data and visualize health metrics with charts and
+            history logs, improving patient dashboards for doctors and users.
+          </>,
+          <>
+            Collaborated with technical and medical teams to refine integration and data visualization.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "SplitOff (Freelance)",
+        timeframe: "Jan 2024 – Mar 2024",
+        role: "Flutter Developer",
+        achievements: [
+          <>
+            Translated Figma designs into responsive, reusable Flutter UI components with cross-platform
+            support for Android & iOS.
+          </>,
+          <>
+            Implemented state management using Bloc (Cubit) and optimized real-time data rendering.
+          </>,
+          <>
+            Integrated RESTful APIs and developed a voucher feature with dynamic promo logic.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Bangkit Academy (Google, Tokopedia, Gojek, Traveloka)",
+        timeframe: "Aug 2023 – Jan 2024",
+        role: "Android Developer Cohort",
+        achievements: [
+          <>
+            Built <strong>CafeAlyzer</strong>, an AI-powered app for competitor analysis and sentiment
+            recommendations for small cafes.
+          </>,
+          <>
+            Developed search, competitor comparison, and ML-based sentiment analysis features.
+          </>,
+          <>
+            Collaborated with Backend and ML teams to ensure smooth integration and on-time delivery.
           </>,
         ],
         images: [],
@@ -155,75 +193,87 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Ahmad Dahlan University",
+        description: <>Studied informatics engineering.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "Mobile Development",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Experienced in building scalable mobile apps using{" "}
+            <strong>Flutter, React Native, and Kotlin</strong>. Skilled in
+            implementing state management (Bloc, MVVM), navigation, and ensuring
+            cross-platform compatibility.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "Flutter", icon: "flutter" },
+          { name: "React Native", icon: "react" },
+          { name: "Kotlin", icon: "kotlin" },
+          { name: "Android Studio", icon: "android" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Frontend Development",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Proficient in building responsive, reusable UI with{" "}
+            <strong>React and modern web technologies</strong>. Experienced in
+            translating Figma designs, optimizing performance, and integrating
+            RESTful APIs.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "React", icon: "react" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "HTML/CSS", icon: "html" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Android Development",
+        description: (
+          <>
+            Skilled in{" "}
+            <strong>Jetpack Compose, Clean Architecture, MVVM, and Android SDK</strong>.
+            Experienced with libraries and tools like Retrofit, Room, Koin, and
+            Kotlin Flow to build production-ready apps.
+          </>
+        ),
+        tags: [
+          { name: "Jetpack Compose", icon: "android" },
+          { name: "MVVM", icon: "code" },
+          { name: "Clean Architecture", icon: "layers" },
+          { name: "Kotlin Flow", icon: "stream" },
         ],
-      },  
+        images: [],
+      },
+      {
+        title: "Software Engineering Practices",
+        description: (
+          <>
+            Strong foundation in{" "}
+            <strong>SOLID principles, OOP, Clean Code, and CI/CD</strong>. Skilled
+            in Git-based workflows, project management, and collaboration in
+            cross-functional teams.
+          </>
+        ),
+        tags: [
+          { name: "Git", icon: "git" },
+          { name: "CI/CD", icon: "pipeline" },
+          { name: "OOP", icon: "code" },
+          { name: "SOLID", icon: "layers" },
+        ],
+        images: [],
+      },
     ],
   },
 };
