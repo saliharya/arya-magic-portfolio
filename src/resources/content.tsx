@@ -194,7 +194,7 @@ const about: About = {
     institutions: [
       {
         name: "Ahmad Dahlan University",
-        description: <>Studied informatics engineering.</>,
+        description: <>Bachelor’s Degree in Informatics Engineering.</>,
       },
     ],
   },
