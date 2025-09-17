@@ -77,8 +77,9 @@ function createImage({ alt, src, ...props }: MediaProps & { src: string }) {
   );
 }
 
-function slugify(str: string): string {
-  const strWithAnd = str.replace(/&/g, " and "); // Replace & with 'and'
+function slugify(str: unknown): string {
+  const safeStr = String(str || ""); // ensure we have a string
+  const strWithAnd = safeStr.replace(/&/g, " and "); // Replace & with 'and'
   return transliterate(strWithAnd, {
     lowercase: true,
     separator: "-", // Replace spaces with -
