@@ -49,6 +49,11 @@ export default function About() {
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
     },
+    {
+      title: "GitHub Contributions",
+      display: true,
+      items: [],
+    },
   ];
   return (
     <Column maxWidth="m">
@@ -333,6 +338,45 @@ export default function About() {
               </Column>
             </>
           )}
+
+          <Heading
+            as="h2"
+            id="GitHub Contributions"
+            variant="display-strong-s"
+            marginBottom="m"
+          >
+            GitHub Contributions
+          </Heading>
+          <Column fillWidth gap="16" marginBottom="40">
+            <Text variant="body-default-m" onBackground="neutral-weak">
+              A snapshot of my recent coding activity. See the full profile and
+              repositories on GitHub.
+            </Text>
+            <a
+              href="https://github.com/saliharya"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "block", width: "100%" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://ghchart.rshah.org/22d3ee/saliharya"
+                alt="Salih Arya Gumilang's GitHub contributions chart"
+                style={{ width: "100%", height: "auto" }}
+                loading="lazy"
+              />
+            </a>
+            <Row>
+              <Button
+                href="https://github.com/saliharya"
+                prefixIcon="github"
+                label="View GitHub profile"
+                size="s"
+                weight="default"
+                variant="secondary"
+              />
+            </Row>
+          </Column>
         </Column>
       </Row>
     </Column>

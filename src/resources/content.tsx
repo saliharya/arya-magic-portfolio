@@ -5,7 +5,7 @@ const person: Person = {
   firstName: "Salih Arya",
   lastName: "Gumilang",
   name: `Salih Arya Gumilang`,
-  role: "Software Engineer",
+  role: "Android Developer · Jetpack Compose · IoT & Real-time Systems",
   avatar: "/images/avatar.jpg",
   email: "saliharya@gmail.com",
   location: "Asia/Jakarta",
@@ -48,10 +48,10 @@ const home: Home = {
   image: "/images/og/home.png",
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
+  description: `Portfolio website showcasing my Android development work`,
   headline:
     <>I'm Salih Arya Gumilang, <br />
-      a Software Engineer</>,
+      an Android Developer</>,
   featured: {
     display: true,
     title: (
@@ -67,9 +67,9 @@ const home: Home = {
   },
   subline: (
     <>
-      Specialize in building <br />
-      scalable apps and intuitive UI, integrating RESTful APIs, and delivering
-      production-ready projects.
+      I build Android systems that can't afford to fail — <br />
+      specializing in Jetpack Compose, IoT &amp; BLE integration, and
+      real-time WebSocket architectures for production.
     </>
   ),
 };
@@ -95,15 +95,15 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Salih Arya Gumilang is a{" "}
-        <strong>Frontend & Mobile Developer</strong> with expertise in{" "}
-        <strong>Kotlin, React, Flutter, and React Native</strong>He is passionate about
-        crafting scalable applications, building intuitive user interfaces, and
-        integrating RESTful APIs to deliver production-ready solutions. With a
-        background in{" "}
-        <strong>Bangkit Academy (led by Google, Tokopedia, Gojek, and Traveloka)</strong>{" "}
-        and proven experience across freelance and industry projects, Arya bridges
-        design and engineering to create impactful digital products.
+        Salih Arya Gumilang is an{" "}
+        <strong>Android Developer</strong> specializing in{" "}
+        <strong>Kotlin, Jetpack Compose, and real-time IoT systems</strong>. He builds
+        production-grade Android apps for high-stakes environments — from BLE device
+        integration to zero-downtime WebSocket architectures serving 500+ daily users.
+        A <strong>Bangkit Academy Distinction Graduate</strong> (led by Google,
+        Tokopedia, Gojek, and Traveloka), Arya pairs clean architecture (MVVM, Clean
+        Architecture) with measurable impact, and explores Compose Multiplatform to
+        share logic without leaving the native ecosystem.
       </>
     ),
   },

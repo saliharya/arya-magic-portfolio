@@ -20,7 +20,8 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
+  // Blog hidden: fewer than 3 published articles. Re-enable once 3+ posts exist.
+  "/blog": false,
 };
 
 const display: DisplayConfig = {
