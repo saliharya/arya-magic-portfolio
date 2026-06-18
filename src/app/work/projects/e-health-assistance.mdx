@@ -1,7 +1,7 @@
 ---
-title: "E-Health Assistance – Remote Health Monitoring App"
-publishedAt: "2024-05-01"
-summary: "An Android app that integrates medical device data via API to improve diagnostic capabilities for remote healthcare users."
+title: "E-Health Assistance – Patient Health Dashboard"
+publishedAt: "2024-05-15"
+summary: "An Android dashboard app that synchronizes patient health data and visualizes metrics with interactive charts and history logs for doctors and patients."
 images:
   - "/images/projects/ehealthassistance/1.jpg"
   - "/images/projects/ehealthassistance/2.jpg"
@@ -16,20 +16,28 @@ link: "https://tsi.co.id/"
 
 ## Overview
 
-ATM Sehat is a telehealth application developed for **Telehealth Indonesia** to integrate manual medical test data into a digital health monitoring platform. This enables remote diagnostics and expands access to healthcare.
+E-Health Assistance is the patient-facing companion to Telehealth Indonesia's
+monitoring platform. While ATM Sehat focuses on *ingesting* raw medical-device
+readings, E-Health Assistance turns that data into an actionable dashboard —
+synchronizing health records across devices and presenting them through charts,
+trends, and history logs so doctors and patients can track progress over time.
 
 ## Key Features
 
-- **API Integration**: Added support for ketone, spirometer, and hematocrit data.  
-- **Improved Diagnostics**: Enhanced the platform’s ability to provide comprehensive health insights.  
-- **Collaboration**: Worked with medical professionals to validate data integration.
+- **Data Synchronization**: Kept patient health records consistent across devices and the backend.
+- **Health Visualization**: Built interactive charts and trend views for metrics like glucose, ketone, and spirometry results.
+- **History Logs**: Surfaced a chronological record of past readings to support diagnosis and follow-up.
+- **Patient & Doctor Dashboards**: Tailored views that made the same data useful for both clinical and patient audiences.
 
 ## Technologies Used
 
-- Kotlin, Android SDK  
-- Retrofit for API integration  
-- MVVM, Clean Architecture  
+- Kotlin, Android SDK
+- MPAndroidChart for data visualization
+- Retrofit for API integration
+- MVVM, Clean Architecture
 
 ## Outcome
 
-The project improved diagnostic capabilities for remote users, providing doctors and patients with richer datasets for informed healthcare decisions.
+The dashboard gave doctors and patients a clear, longitudinal view of health
+metrics — turning isolated test results into trends that informed better
+remote-care decisions.
