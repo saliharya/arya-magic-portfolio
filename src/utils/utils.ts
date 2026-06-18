@@ -9,6 +9,19 @@ type Team = {
   linkedIn: string;
 };
 
+type CoverMetric = {
+  value: string;
+  label: string;
+};
+
+type Cover = {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  metrics?: CoverMetric[];
+  stack?: string[];
+};
+
 type Metadata = {
   title: string;
   publishedAt: string;
@@ -18,6 +31,7 @@ type Metadata = {
   tag?: string;
   team: Team[];
   link?: string;
+  cover?: Cover;
 };
 
 import { notFound } from "next/navigation";
@@ -47,6 +61,7 @@ function readMDXFile(filePath: string) {
     tag: data.tag || [],
     team: data.team || [],
     link: data.link || "",
+    cover: data.cover || undefined,
   };
 
   return { metadata, content };

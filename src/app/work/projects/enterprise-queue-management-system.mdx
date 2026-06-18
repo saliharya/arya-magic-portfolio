@@ -1,0 +1,82 @@
+---
+title: "Enterprise Queue Management System (QMS)"
+publishedAt: "2025-11-15"
+summary: "A real-time kiosk and queue management platform serving 500+ daily users across 7 product lines, built on a zero-downtime WebSocket architecture."
+images: []
+cover:
+  eyebrow: "Enterprise Case Study · NDA"
+  title: "Queue Management System"
+  subtitle: "Real-time kiosk & queueing platform for high-traffic facilities"
+  metrics:
+    - value: "500+"
+      label: "daily users"
+    - value: "24/7"
+      label: "zero-downtime"
+    - value: "WebSocket"
+      label: "real-time sync"
+    - value: "7"
+      label: "product lines"
+  stack:
+    - "Kotlin"
+    - "Jetpack Compose"
+    - "WebSocket"
+    - "MVVM"
+    - "Clean Architecture"
+team:
+  - name: "Salih Arya Gumilang"
+    role: "Android Developer (Kotlin)"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://linkedin.com/in/aryagumilang/"
+link: ""
+---
+
+> **Note:** This is an anonymized case study. The client and product names are
+> withheld under NDA. Architecture, metrics, and engineering decisions described
+> below are accurate.
+
+## Overview
+
+An enterprise client operating high-traffic service facilities needed a kiosk-based
+**Queue Management System (QMS)** that could keep self-service terminals, staff
+displays, and back-office systems perfectly in sync — in real time, around the
+clock. I worked on the Android side of this platform, building production apps
+that drive customer-facing kiosks and counter displays across **7 product lines**
+and serving **500+ users per day**.
+
+## The Challenge
+
+Queueing is unforgiving: a frozen kiosk or a stale "now serving" number directly
+becomes a line of frustrated people. The system had to:
+
+- Stay correct in **real time** — every ticket issued or called had to propagate to
+  all screens instantly.
+- Run **24/7 with zero downtime**, including graceful recovery from flaky on-site networks.
+- Scale to **multiple product lines** without forking the codebase for each one.
+
+## What I Built
+
+- **Real-time sync over WebSocket.** Replaced polling with a persistent WebSocket
+  channel so kiosks, displays, and the backend share a single live source of truth.
+  Implemented automatic reconnection with backoff and state re-hydration so a
+  dropped connection never leaves a screen showing stale data.
+- **Resilient, always-on Android clients.** Designed the kiosk apps to survive
+  network blips, restarts, and long uptime — defensive state handling, offline
+  buffering, and idempotent message processing to avoid double-counting tickets.
+- **Configurable multi-tenant UI.** A shared Jetpack Compose UI layer driven by
+  configuration so a single codebase powers all 7 product lines, cutting
+  per-line maintenance overhead.
+
+## Architecture
+
+- **Kotlin + Jetpack Compose** for the kiosk and display apps
+- **WebSocket** for real-time, bidirectional state sync
+- **MVVM + Clean Architecture** with Kotlin Flow for reactive UI state
+- Retrofit for REST fallbacks and configuration fetch
+
+## Outcome
+
+The platform has run continuously in production, keeping **500+ daily users**
+moving through queues across 7 product lines with **zero-downtime** real-time
+updates. The WebSocket-based design eliminated the lag and stale-state issues of
+the previous polling approach, and the configuration-driven UI let new product
+lines launch without a separate build.
