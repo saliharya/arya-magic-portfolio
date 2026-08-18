@@ -56,14 +56,14 @@ const home: Home = {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Feggyfy</strong>{" "}
+        <strong className="ml-4">Queue Management System</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/feggyfy-ai-crop-disease-detection",
+    href: "/work/enterprise-queue-management-system",
   },
   subline: (
     <>
@@ -96,14 +96,17 @@ const about: About = {
     description: (
       <>
         Salih Arya Gumilang is an{" "}
-        <strong>Android Developer</strong> specializing in{" "}
-        <strong>Kotlin, Jetpack Compose, and real-time IoT systems</strong>. He builds
-        production-grade Android apps for high-stakes environments — from BLE device
-        integration to zero-downtime WebSocket architectures serving 500+ daily users.
-        A <strong>Bangkit Academy Distinction Graduate</strong> (led by Google,
-        Tokopedia, Gojek, and Traveloka), Arya pairs clean architecture (MVVM, Clean
-        Architecture) with measurable impact, and explores Compose Multiplatform to
-        share logic without leaving the native ecosystem.
+        <strong>Android Engineer</strong> specializing in{" "}
+        <strong>Kotlin, Jetpack Compose, and real-time systems</strong> — with a growing
+        focus on <strong>Kotlin Multiplatform</strong>. He builds production-grade
+        Android software for high-stakes, 24/7 environments: a hospital queue system
+        serving <strong>11,000+ patients per month</strong>, an enterprise MDM agent over
+        MQTT and WebRTC, and a BLE pipeline he optimized from ~5 minutes to under 5
+        seconds. A <strong>Dicoding Android Developer Expert</strong> and{" "}
+        <strong>Bangkit Academy Distinction Graduate</strong> (led by Google, Tokopedia,
+        Gojek, and Traveloka), he pairs clean architecture (MVVM, MVI, Clean
+        Architecture) with measurable impact, and is open to relocation for the right
+        Android or Kotlin Multiplatform role.
       </>
     ),
   },
@@ -112,18 +115,47 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
+        company: "PT Sentuh Digital Teknologi",
+        timeframe: "Nov 2025 – Present",
+        role: "Android Developer (Kotlin)",
+        achievements: [
+          <>
+            Build and maintain Android systems across <strong>7 product lines</strong> — 24/7 self-service
+            kiosks, IoT devices, and real-time digital signage running continuously in production.
+          </>,
+          <>
+            Delivered a hospital <strong>Queue Management System</strong> serving <strong>11,000+ patients
+            per month</strong> at Medistra Hospital, with real-time updates over WebSocket.
+          </>,
+          <>
+            Built the Android agent of an enterprise <strong>MDM platform</strong> — persistent MQTT command
+            channel, WebRTC remote desktop, and a multi-tier remote-input pipeline for fleet management.
+          </>,
+          <>
+            Shipped government and enterprise digital-signage platforms with live CMS integration for clients
+            including <strong>BNI, AntaraNews, and Imigrasi</strong>, plus the <strong>Salin.Cloud</strong> file/text-sharing system.
+          </>,
+          <>
+            Improved reliability through testing, code reviews, and cross-team collaboration with web and backend engineers.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "getgoing.co.id",
         timeframe: "Sep 2024 – May 2025",
         role: "React Native & React Developer",
         achievements: [
           <>
-            Enhanced app stability by resolving bugs, ensuring seamless performance for end-users.
+            Shipped three products: a <strong>React web admin dashboard</strong> and two{" "}
+            <strong>React Native</strong> apps — the GetGoing customer app and the GetPartner app.
           </>,
           <>
-            Translated Figma designs into responsive, reusable React UI components.
+            Translated Figma designs into responsive, reusable UI components across web and mobile.
           </>,
           <>
-            Refactored code to follow modern best practices, significantly improving readability and scalability.
+            Enhanced app stability by resolving bugs and refactored code toward modern best practices,
+            improving readability and scalability.
           </>,
           <>
             Designed and deployed backend features using Cloud Functions integrated with Firestore.
@@ -133,16 +165,20 @@ const about: About = {
       },
       {
         company: "Telehealth Indonesia (Freelance)",
-        timeframe: "Mar 2024 – May 2024",
+        timeframe: "Mar 2024 – Present",
         role: "Android Developer (Kotlin)",
         achievements: [
           <>
-            Integrated medical test data (ketone, spirometer, hematocrit) via API into the ATM Sehat App,
-            enhancing diagnostic capabilities for remote users.
+            Reduced BLE measurement time by <strong>over 98% — from ~5 minutes to under 5 seconds</strong> —
+            across multiple Android devices in the ATM Sehat App.
           </>,
           <>
-            Built <strong>Tea App</strong> to synchronize data and visualize health metrics with charts and
-            history logs, improving patient dashboards for doctors and users.
+            Integrated medical device data (ketone, spirometer, hematocrit) via <strong>API and BLE</strong>{" "}
+            into a unified Android platform, enhancing remote diagnostics.
+          </>,
+          <>
+            Built <strong>E-Health Assistance</strong> to synchronize data and visualize health metrics with
+            charts and history logs, improving patient dashboards for doctors and users.
           </>,
           <>
             Collaborated with technical and medical teams to refine integration and data visualization.
@@ -194,7 +230,9 @@ const about: About = {
     institutions: [
       {
         name: "Ahmad Dahlan University",
-        description: <>Bachelor’s Degree in Informatics Engineering.</>,
+        description: (
+          <>Bachelor’s Degree in Informatics Engineering — GPA 3.80 / 4.00 (2021 – 2025).</>
+        ),
       },
     ],
   },
@@ -250,9 +288,27 @@ const about: About = {
         ),
         tags: [
           { name: "Jetpack Compose", icon: "android" },
-          { name: "MVVM", icon: "code" },
+          { name: "MVVM / MVI", icon: "code" },
           { name: "Clean Architecture", icon: "layers" },
           { name: "Kotlin Flow", icon: "stream" },
+        ],
+        images: [],
+      },
+      {
+        title: "Real-time & IoT Systems",
+        description: (
+          <>
+            Experienced in building production systems that run <strong>24/7</strong> — real-time sync
+            over <strong>WebSocket</strong> and <strong>MQTT</strong>, <strong>BLE</strong> device
+            integration, and <strong>WebRTC</strong> remote streaming for kiosks, medical devices, and
+            fleet-managed Android hardware.
+          </>
+        ),
+        tags: [
+          { name: "WebSocket", icon: "stream" },
+          { name: "MQTT", icon: "stream" },
+          { name: "BLE", icon: "code" },
+          { name: "WebRTC", icon: "code" },
         ],
         images: [],
       },
@@ -273,6 +329,126 @@ const about: About = {
           { name: "SOLID", icon: "layers" },
         ],
         images: [],
+      },
+    ],
+  },
+  certifications: {
+    display: true,
+    title: "Certifications",
+    items: [
+      {
+        name: "Becoming an Android Developer Expert",
+        issuer: "Dicoding Indonesia",
+        timeframe: "Issued Mar 2024 · Expires Mar 2027",
+        credentialId: "81P2VWVYOPOY",
+        link: "https://www.dicoding.com/certificates/81P2VWVYOPOY",
+      },
+      {
+        name: "Learn Intermediate Android Application Development",
+        issuer: "Dicoding Indonesia",
+        timeframe: "Issued Nov 2023 · Expires Nov 2026",
+        credentialId: "JMZV171VJXN9",
+        link: "https://www.dicoding.com/certificates/JMZV171VJXN9",
+      },
+      {
+        name: "Learn Git Basics with GitHub",
+        issuer: "Dicoding Indonesia",
+        timeframe: "Issued Aug 2023 · Expires Aug 2026",
+        credentialId: "1OP808JRQXQK",
+        link: "https://www.dicoding.com/certificates/1OP808JRQXQK",
+      },
+      {
+        name: "Learn SOLID Programming Principles",
+        issuer: "Dicoding Indonesia",
+        timeframe: "Issued Sep 2023 · Expires Sep 2026",
+        credentialId: "81P27QELYZOY",
+        link: "https://www.dicoding.com/certificates/81P27QELYZOY",
+      },
+      {
+        name: "Bangkit Academy Distinction Graduate",
+        issuer: "Bangkit led by Google, GoTo & Traveloka",
+        timeframe: "Issued Jan 2024",
+        credentialId: "BA23/DIST/XXIV-01/A179BSY2696",
+      },
+    ],
+  },
+  testimonials: {
+    display: true,
+    title: "Recommendations",
+    defaultVisible: 2,
+    items: [
+      {
+        quote: (
+          <>
+            I mentored Arya from the time he was just getting started with coding, and now he picks
+            up complex tasks with confidence. We&apos;ve worked together on projects like ATM Sehat,
+            integrating Android apps with healthcare IoT devices, and he&apos;s currently at Sentuh
+            focusing on Android integration with backend services and IoT devices. Besides Android,
+            he&apos;s been learning Flutter, <strong>Kotlin Multiplatform</strong>, and Go — he&apos;s
+            never satisfied with knowing just one thing. If you&apos;re a recruiter or hiring manager
+            looking for someone with strong growth potential and a great attitude, I&apos;d definitely
+            recommend giving Arya a chance.
+          </>
+        ),
+        name: "Arga Hutama",
+        role: "Software Engineer at HungerStation (Delivery Hero), ex-Gojek · mentored Arya directly",
+        linkedIn: "https://www.linkedin.com/in/argahut/",
+      },
+      {
+        quote: (
+          <>
+            I had the opportunity to work with Salih at Sentuh Digital Teknologi, and it was a great
+            experience. Salih stands out for his strong communication skills, which make collaboration
+            smooth and effective across teams. He is also a deep learner and dedicated researcher who
+            consistently shows curiosity, analytical thinking, and a strong commitment to understanding
+            things thoroughly. I believe Salih has great potential to contribute meaningfully in any
+            team or organization.
+          </>
+        ),
+        name: "M. Aldhika Yandaputra",
+        role: "Software Engineer · worked with Arya at Sentuh Digital Teknologi",
+        linkedIn: "https://www.linkedin.com/in/m-aldhika-yandaputra-42a12a1b3/",
+      },
+      {
+        quote: (
+          <>
+            Salih has a solid technical foundation, particularly in <strong>Android Development and
+            Kotlin</strong>, and consistently showed initiative in solving problems within the team.
+            He communicates clearly and is great to discuss both technical and day-to-day
+            problem-solving challenges with. I&apos;d recommend him to any team looking for a reliable
+            developer who&apos;s always eager to learn.
+          </>
+        ),
+        name: "Rian Ihsan Ardiansyah",
+        role: "Golang Engineer at PT Sarana Pactindo · worked with Arya at Sentuh",
+        linkedIn: "https://www.linkedin.com/in/rianihsan/",
+      },
+      {
+        quote: (
+          <>
+            Whenever we discovered bugs or integration issues between the web and Android
+            applications, Arya was proactive in discussing the problem, investigating the cause,
+            and working together to find the right solution. His cooperative attitude and strong
+            communication made troubleshooting much easier. I&apos;d recommend Arya to any team
+            looking for a reliable Android Developer who communicates well and collaborates across teams.
+          </>
+        ),
+        name: "Haikal Apriansyah",
+        role: "Frontend Developer at Sentuh Digital Teknologi",
+        linkedIn: "https://www.linkedin.com/in/haikal-apriansyah-004849291/",
+      },
+      {
+        quote: (
+          <>
+            He is a dedicated Android Developer who quickly understands requirements and
+            consistently delivers high-quality work. He is collaborative, reliable, and always
+            open to feedback, making him an excellent teammate. I highly recommend him to anyone
+            looking for a skilled and dependable Android Developer.
+          </>
+        ),
+        name: "Revanza Firdaus",
+        role: "Software Engineer · worked with Arya on the same team",
+        linkedIn: "https://www.linkedin.com/in/revanza-firdaus-2801a6292/",
       },
     ],
   },

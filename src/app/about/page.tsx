@@ -14,6 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
+import Testimonials from "@/components/about/Testimonials";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -48,6 +49,16 @@ export default function About() {
       title: about.technical.title,
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
+    },
+    {
+      title: about.certifications?.title ?? "Certifications",
+      display: about.certifications?.display ?? false,
+      items: about.certifications?.items.map((cert) => cert.name) ?? [],
+    },
+    {
+      title: about.testimonials?.title ?? "Recommendations",
+      display: about.testimonials?.display ?? false,
+      items: about.testimonials?.items.map((t) => t.name) ?? [],
     },
     {
       title: "GitHub Contributions",
@@ -200,8 +211,10 @@ export default function About() {
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="xl">
-              {about.intro.description}
+            <Column fillWidth gap="m" marginBottom="xl">
+              <Text variant="body-default-l" onBackground="neutral-medium">
+                {about.intro.description}
+              </Text>
             </Column>
           )}
 
@@ -337,6 +350,62 @@ export default function About() {
                 ))}
               </Column>
             </>
+          )}
+
+          {about.certifications?.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.certifications.title}
+                variant="display-strong-s"
+                marginBottom="40"
+              >
+                {about.certifications.title}
+              </Heading>
+              <Column fillWidth gap="m" marginBottom="40">
+                {about.certifications.items.map((cert, index) => (
+                  <Column
+                    key={`${cert.name}-${index}`}
+                    fillWidth
+                    gap="4"
+                    border="neutral-alpha-medium"
+                    radius="m"
+                    padding="l"
+                  >
+                    <Row fillWidth horizontal="between" vertical="start" gap="12" s={{ direction: "column" }}>
+                      <Text id={cert.name} variant="heading-strong-m">
+                        {cert.link ? (
+                          <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                            {cert.name}
+                          </a>
+                        ) : (
+                          cert.name
+                        )}
+                      </Text>
+                      <Text variant="body-default-s" onBackground="neutral-weak" style={{ whiteSpace: "nowrap" }}>
+                        {cert.timeframe}
+                      </Text>
+                    </Row>
+                    <Text variant="body-default-m" onBackground="brand-weak">
+                      {cert.issuer}
+                    </Text>
+                    {cert.credentialId && (
+                      <Text variant="body-default-xs" onBackground="neutral-weak">
+                        Credential ID: {cert.credentialId}
+                      </Text>
+                    )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.testimonials?.display && (
+            <Testimonials
+              title={about.testimonials.title}
+              items={about.testimonials.items}
+              defaultVisible={about.testimonials.defaultVisible}
+            />
           )}
 
           <Heading
