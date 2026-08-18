@@ -33,6 +33,8 @@ type Metadata = {
   link?: string;
   cover?: Cover;
   priority?: number;
+  /** Whether relevant to Android/Kotlin (defaults true); false ones collapse behind "more". */
+  androidRelevant?: boolean;
 };
 
 import { notFound } from "next/navigation";
@@ -64,6 +66,7 @@ function readMDXFile(filePath: string) {
     link: data.link || "",
     cover: data.cover || undefined,
     priority: typeof data.priority === "number" ? data.priority : 0,
+    androidRelevant: data.androidRelevant !== false,
   };
 
   return { metadata, content };

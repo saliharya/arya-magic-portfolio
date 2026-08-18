@@ -15,6 +15,7 @@ import {
 import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import Testimonials from "@/components/about/Testimonials";
+import { CollapsibleList } from "@/components/CollapsibleList";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
 
@@ -223,7 +224,12 @@ export default function About() {
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
                 {about.work.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <CollapsibleList
+                gap="l"
+                marginBottom="40"
+                visibleCount={about.work.experiences.filter((e) => e.androidRelevant !== false).length}
+                moreLabel="Show more experience"
+              >
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Row fillWidth horizontal="between" vertical="end" marginBottom="4">
@@ -273,7 +279,7 @@ export default function About() {
                     )}
                   </Column>
                 ))}
-              </Column>
+              </CollapsibleList>
             </>
           )}
 
@@ -307,7 +313,12 @@ export default function About() {
               >
                 {about.technical.title}
               </Heading>
-              <Column fillWidth gap="l">
+              <CollapsibleList
+                gap="l"
+                marginBottom="40"
+                visibleCount={about.technical.skills.filter((s) => s.androidRelevant !== false).length}
+                moreLabel="Show more skills"
+              >
                 {about.technical.skills.map((skill, index) => (
                   <Column key={`${skill}-${index}`} fillWidth gap="4">
                     <Text id={skill.title} variant="heading-strong-l">
@@ -348,7 +359,7 @@ export default function About() {
                     )}
                   </Column>
                 ))}
-              </Column>
+              </CollapsibleList>
             </>
           )}
 
@@ -375,7 +386,12 @@ export default function About() {
                     <Row fillWidth horizontal="between" vertical="start" gap="12" s={{ direction: "column" }}>
                       <Text id={cert.name} variant="heading-strong-m">
                         {cert.link ? (
-                          <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                          <a
+                            className="link-inherit"
+                            href={cert.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             {cert.name}
                           </a>
                         ) : (

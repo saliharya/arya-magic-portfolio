@@ -49,7 +49,12 @@ export default function Testimonials({ title, items, defaultVisible = 2 }: Testi
             <Column gap="2">
               <Text variant="heading-strong-s">
                 {testimonial.linkedIn ? (
-                  <a href={testimonial.linkedIn} target="_blank" rel="noopener noreferrer">
+                  <a
+                    className="link-inherit"
+                    href={testimonial.linkedIn}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     {testimonial.name}
                   </a>
                 ) : (

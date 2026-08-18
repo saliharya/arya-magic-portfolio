@@ -52,3 +52,16 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+
+/* Clickable text that should look like plain (inherited-colour) text,
+   with an underline only on hover to signal it's a link.
+   Overrides once-ui's default `a:not(.button)` brand colour. */
+a.link-inherit {
+  color: inherit !important;
+  text-decoration: none;
+}
+a.link-inherit:hover,
+a.link-inherit:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -125,7 +125,7 @@ const about: About = {
           </>,
           <>
             Delivered a hospital <strong>Queue Management System</strong> serving <strong>11,000+ patients
-            per month</strong> at Medistra Hospital, with real-time updates over WebSocket.
+              per month</strong> at Medistra Hospital, with real-time updates over WebSocket.
           </>,
           <>
             Built the Android agent of an enterprise <strong>MDM platform</strong> — persistent MQTT command
@@ -137,28 +137,6 @@ const about: About = {
           </>,
           <>
             Improved reliability through testing, code reviews, and cross-team collaboration with web and backend engineers.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "getgoing.co.id",
-        timeframe: "Sep 2024 – May 2025",
-        role: "React Native & React Developer",
-        achievements: [
-          <>
-            Shipped three products: a <strong>React web admin dashboard</strong> and two{" "}
-            <strong>React Native</strong> apps — the GetGoing customer app and the GetPartner app.
-          </>,
-          <>
-            Translated Figma designs into responsive, reusable UI components across web and mobile.
-          </>,
-          <>
-            Enhanced app stability by resolving bugs and refactored code toward modern best practices,
-            improving readability and scalability.
-          </>,
-          <>
-            Designed and deployed backend features using Cloud Functions integrated with Firestore.
           </>,
         ],
         images: [],
@@ -187,24 +165,6 @@ const about: About = {
         images: [],
       },
       {
-        company: "SplitOff (Freelance)",
-        timeframe: "Jan 2024 – Mar 2024",
-        role: "Flutter Developer",
-        achievements: [
-          <>
-            Translated Figma designs into responsive, reusable Flutter UI components with cross-platform
-            support for Android & iOS.
-          </>,
-          <>
-            Implemented state management using Bloc (Cubit) and optimized real-time data rendering.
-          </>,
-          <>
-            Integrated RESTful APIs and developed a voucher feature with dynamic promo logic.
-          </>,
-        ],
-        images: [],
-      },
-      {
         company: "Bangkit Academy (Google, Tokopedia, Gojek, Traveloka)",
         timeframe: "Aug 2023 – Jan 2024",
         role: "Android Developer Cohort",
@@ -218,6 +178,48 @@ const about: About = {
           </>,
           <>
             Collaborated with Backend and ML teams to ensure smooth integration and on-time delivery.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "getgoing.co.id",
+        timeframe: "Sep 2024 – May 2025",
+        role: "React Native & React Developer",
+        androidRelevant: false,
+        achievements: [
+          <>
+            Shipped three products: a <strong>React web admin dashboard</strong> and two{" "}
+            <strong>React Native</strong> apps — the GetGoing customer app and the GetPartner app.
+          </>,
+          <>
+            Translated Figma designs into responsive, reusable UI components across web and mobile.
+          </>,
+          <>
+            Enhanced app stability by resolving bugs and refactored code toward modern best practices,
+            improving readability and scalability.
+          </>,
+          <>
+            Designed and deployed backend features using Cloud Functions integrated with Firestore.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "SplitOff (Freelance)",
+        timeframe: "Jan 2024 – Mar 2024",
+        role: "Flutter Developer",
+        androidRelevant: false,
+        achievements: [
+          <>
+            Translated Figma designs into responsive, reusable Flutter UI components with cross-platform
+            support for Android & iOS.
+          </>,
+          <>
+            Implemented state management using Bloc (Cubit) and optimized real-time data rendering.
+          </>,
+          <>
+            Integrated RESTful APIs and developed a voucher feature with dynamic promo logic.
           </>,
         ],
         images: [],
@@ -241,52 +243,17 @@ const about: About = {
     title: "Technical Skills",
     skills: [
       {
-        title: "Mobile Development",
-        description: (
-          <>
-            Experienced in building scalable mobile apps using{" "}
-            <strong>Flutter, React Native, and Kotlin</strong>. Skilled in
-            implementing state management (Bloc, MVVM), navigation, and ensuring
-            cross-platform compatibility.
-          </>
-        ),
-        tags: [
-          { name: "Flutter", icon: "flutter" },
-          { name: "React Native", icon: "react" },
-          { name: "Kotlin", icon: "kotlin" },
-          { name: "Android Studio", icon: "android" },
-        ],
-        images: [],
-      },
-      {
-        title: "Frontend Development",
-        description: (
-          <>
-            Proficient in building responsive, reusable UI with{" "}
-            <strong>React and modern web technologies</strong>. Experienced in
-            translating Figma designs, optimizing performance, and integrating
-            RESTful APIs.
-          </>
-        ),
-        tags: [
-          { name: "React", icon: "react" },
-          { name: "JavaScript", icon: "javascript" },
-          { name: "TypeScript", icon: "typescript" },
-          { name: "HTML/CSS", icon: "html" },
-        ],
-        images: [],
-      },
-      {
         title: "Android Development",
         description: (
           <>
             Skilled in{" "}
-            <strong>Jetpack Compose, Clean Architecture, MVVM, and Android SDK</strong>.
+            <strong>Kotlin, Jetpack Compose, Clean Architecture, MVVM/MVI, and Android SDK</strong>.
             Experienced with libraries and tools like Retrofit, Room, Koin, and
             Kotlin Flow to build production-ready apps.
           </>
         ),
         tags: [
+          { name: "Kotlin", icon: "kotlin" },
           { name: "Jetpack Compose", icon: "android" },
           { name: "MVVM / MVI", icon: "code" },
           { name: "Clean Architecture", icon: "layers" },
@@ -327,6 +294,44 @@ const about: About = {
           { name: "CI/CD", icon: "pipeline" },
           { name: "OOP", icon: "code" },
           { name: "SOLID", icon: "layers" },
+        ],
+        images: [],
+      },
+      {
+        title: "Cross-platform & Mobile",
+        androidRelevant: true,
+        description: (
+          <>
+            Alongside native Android, experienced with{" "}
+            <strong>Flutter and React Native</strong>, and exploring{" "}
+            <strong>Kotlin Multiplatform</strong> to share logic without leaving the
+            native ecosystem. Skilled in state management (Bloc, MVVM) and navigation.
+          </>
+        ),
+        tags: [
+          { name: "Kotlin Multiplatform", icon: "kotlin" },
+          { name: "Flutter", icon: "flutter" },
+          { name: "React Native", icon: "react" },
+          { name: "Android Studio", icon: "android" },
+        ],
+        images: [],
+      },
+      {
+        title: "Frontend Development",
+        androidRelevant: false,
+        description: (
+          <>
+            Proficient in building responsive, reusable UI with{" "}
+            <strong>React and modern web technologies</strong>. Experienced in
+            translating Figma designs, optimizing performance, and integrating
+            RESTful APIs.
+          </>
+        ),
+        tags: [
+          { name: "React", icon: "react" },
+          { name: "JavaScript", icon: "javascript" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "HTML/CSS", icon: "html" },
         ],
         images: [],
       },
@@ -413,7 +418,7 @@ const about: About = {
         quote: (
           <>
             Salih has a solid technical foundation, particularly in <strong>Android Development and
-            Kotlin</strong>, and consistently showed initiative in solving problems within the team.
+              Kotlin</strong>, and consistently showed initiative in solving problems within the team.
             He communicates clearly and is great to discuss both technical and day-to-day
             problem-solving challenges with. I&apos;d recommend him to any team looking for a reliable
             developer who&apos;s always eager to learn.

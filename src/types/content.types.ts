@@ -148,6 +148,8 @@ export interface About extends BasePageConfig {
       timeframe: string;
       /** Role or job title */
       role: string;
+      /** Whether this is relevant to Android/Kotlin (defaults true); false ones collapse behind "more" */
+      androidRelevant?: boolean;
       /** Achievements at the company */
       achievements: React.ReactNode[];
       /** Images related to the experience */
@@ -187,6 +189,8 @@ export interface About extends BasePageConfig {
     skills: Array<{
       /** Skill title */
       title: string;
+      /** Whether this is relevant to Android/Kotlin (defaults true); false ones collapse behind "more" */
+      androidRelevant?: boolean;
       /** Skill description */
       description?: React.ReactNode;
       /** Skill tags */
