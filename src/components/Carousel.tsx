@@ -39,7 +39,6 @@ const CSS = `
   to   { transform: translateX(8%);  opacity: 0; }
 }
 
-/* Arrow hover reveal — identical to once-ui library behaviour */
 ._carouselControls ._arrowBtn {
   opacity: 0;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -53,7 +52,6 @@ const CSS = `
 ._arrowBtnRight { transform: translateX(1rem);  }
 `;
 
-/** Watches the rendered <img> for a 404 and calls onError(src). */
 function SlideWrapper({
   src,
   onError,
@@ -111,7 +109,6 @@ export const Carousel: React.FC<CarouselProps> = ({
     (it) => typeof it.slide !== "string" || !erroredSrcs.has(it.slide),
   );
 
-  // Clamp displayed when slides removed after error
   useEffect(() => {
     if (validItems.length > 0 && displayed >= validItems.length) {
       setDisplayed(validItems.length - 1);
@@ -122,7 +119,6 @@ export const Carousel: React.FC<CarouselProps> = ({
 
   useEffect(() => () => { if (timerRef.current) clearTimeout(timerRef.current); }, []);
 
-  // Which index to highlight in the indicator immediately on click
   const indicatorActive = tx?.to ?? displayed;
   const isAnimating = tx !== null;
 
@@ -149,7 +145,7 @@ export const Carousel: React.FC<CarouselProps> = ({
 
   const computedAR =
     aspectRatio === "original" || aspectRatio === "auto" ? undefined : aspectRatio;
-  const radiusVal = (rest.radius as string) ?? "l";
+  const radiusVal = rest.radius ?? "l";
 
   const renderSlide = (idx: number) => {
     const item = validItems[idx];
@@ -183,7 +179,6 @@ export const Carousel: React.FC<CarouselProps> = ({
     );
   };
 
-  // Animation styles for the two active slides
   const easing = `cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
   const baseAnim =
     tx
@@ -212,7 +207,6 @@ export const Carousel: React.FC<CarouselProps> = ({
     >
       <style>{CSS}</style>
 
-      {/* ── Slide stage ── */}
       <div
         className="_carouselControls"
         style={{
@@ -233,16 +227,10 @@ export const Carousel: React.FC<CarouselProps> = ({
           touchStartX.current = null;
         }}
       >
-        {/*
-         * Base slide — always in document flow so container height never collapses.
-         * During a transition this is the EXITING slide (animates out).
-         * When idle it's simply the displayed slide.
-         */}
         <div style={{ animation: baseAnim }}>
           {renderSlide(tx ? tx.from : displayed)}
         </div>
 
-        {/* Entering slide — absolutely positioned on top, animates in */}
         {tx && (
           <div
             style={{
@@ -255,7 +243,6 @@ export const Carousel: React.FC<CarouselProps> = ({
           </div>
         )}
 
-        {/* ── Prev arrow ── */}
         {showPrev && (
           <button
             onClick={handlePrev}
@@ -281,7 +268,6 @@ export const Carousel: React.FC<CarouselProps> = ({
           </button>
         )}
 
-        {/* ── Next arrow ── */}
         {showNext && (
           <button
             onClick={handleNext}
@@ -308,7 +294,6 @@ export const Carousel: React.FC<CarouselProps> = ({
         )}
       </div>
 
-      {/* ── Indicator dots ── */}
       {validItems.length > 1 && indicator === "line" && (
         <div
           style={{
