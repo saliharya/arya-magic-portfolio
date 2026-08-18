@@ -1,7 +1,8 @@
 ---
 title: "ATM Sehat – Medical Device Data Integration"
 publishedAt: "2024-05-01"
-summary: "An Android app that ingests readings from medical devices (ketone, spirometer, hematocrit) via API to power remote diagnostics."
+priority: 75
+summary: "An Android app that ingests readings from medical devices (ketone, spirometer, hematocrit) via API and BLE — with a BLE pipeline optimized from ~5 minutes to under 5 seconds."
 images:
   - "/images/projects/atmsehat/1.png"
   - "/images/projects/atmsehat/2.png"
@@ -15,20 +16,30 @@ link: "https://tsi.co.id/"
 
 ## Overview
 
-ATM Sehat is a telehealth application developed for **Telehealth Indonesia** that brings manual and device-based medical test data into a digital health platform. Its focus is the *ingestion layer* — capturing readings from medical devices and syncing them to the backend so they can power remote diagnostics. (The patient-facing visualization of this data lives in the companion E-Health Assistance dashboard.)
+ATM Sehat is a telehealth application developed for **Telehealth Indonesia** that brings manual and device-based medical test data into a digital health platform. Its focus is the *ingestion layer* — capturing readings from medical devices over **API and Bluetooth Low Energy (BLE)** and syncing them to the backend so they can power remote diagnostics. (The patient-facing visualization of this data lives in the companion **E-Health Assistance** dashboard.)
 
 ## Key Features
 
-- **API Integration**: Added support for ketone, spirometer, and hematocrit data.  
-- **Improved Diagnostics**: Enhanced the platform’s ability to provide comprehensive health insights.  
+- **BLE & API Integration**: Captured ketone, spirometer, and hematocrit readings via both API and BLE.
+- **Hybrid Data Input**: Designed a system combining manual entry with automated device integration.
+- **Real-time Sync**: Built reliable synchronization between IoT medical devices and the Android app.
 - **Collaboration**: Worked with medical professionals to validate data integration.
+
+## Performance: BLE Optimization
+
+The original BLE measurement flow took around **5 minutes** per reading. I redesigned
+the Bluetooth Low Energy communication layer — connection handling, GATT negotiation,
+and data-transfer strategy — cutting that time to **under 5 seconds**: an **over 98%
+reduction**, validated across multiple Android devices. This turned a frustrating,
+error-prone wait into a near-instant reading.
 
 ## Technologies Used
 
 - Kotlin, Android SDK  
+- Bluetooth Low Energy (BLE)
 - Retrofit for API integration  
 - MVVM, Clean Architecture  
 
 ## Outcome
 
-The project improved diagnostic capabilities for remote users, providing doctors and patients with richer datasets for informed healthcare decisions.
+The project improved diagnostic capabilities for remote users, providing doctors and patients with richer datasets for informed healthcare decisions — while the BLE optimization made device readings fast enough to use comfortably in a real clinical flow.

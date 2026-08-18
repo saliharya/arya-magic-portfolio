@@ -1,0 +1,97 @@
+---
+title: "MDM Platform – Android Agent"
+publishedAt: "2026-04-01"
+summary: "The Android-side agent of an enterprise Mobile Device Management platform — remote monitoring and control of Android fleets over MQTT, with WebRTC remote desktop and a multi-tier remote-input pipeline."
+priority: 100
+images:
+  - "/images/projects/mdm/1.png"
+  - "/images/projects/mdm/2.png"
+cover:
+  eyebrow: "Enterprise Case Study · NDA"
+  title: "MDM Platform — Android Agent"
+  subtitle: "Remote monitoring & control for fleets of Android devices"
+  metrics:
+    - value: "MQTT"
+      label: "bidirectional control"
+    - value: "WebRTC"
+      label: "remote desktop"
+    - value: "4-tier"
+      label: "input pipeline"
+    - value: "OTA"
+      label: "dual-mode updates"
+  stack:
+    - "Kotlin"
+    - "MQTT"
+    - "WebRTC"
+    - "Device Owner"
+    - "Accessibility Service"
+    - "WorkManager"
+team:
+  - name: "Salih Arya Gumilang"
+    role: "Android Developer (Kotlin)"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://linkedin.com/in/aryagumilang/"
+link: ""
+---
+
+> **Note:** Built at PT Sentuh Digital Teknologi. This is an anonymized case study;
+> the client and product name are withheld under NDA. Architecture and engineering
+> decisions described below are accurate.
+
+## Overview
+
+I built the Android-side agent of an enterprise **Mobile Device Management (MDM)**
+platform that lets IT administrators remotely monitor and control fleets of Android
+devices from a centralized web dashboard. The agent is the piece that runs *on every
+device* — staying connected, reporting state, and executing commands reliably even on
+hardware that actively tries to kill background processes.
+
+## The Challenge
+
+A device-management agent only earns its keep if it is **always reachable** and
+**always trustworthy**:
+
+- It must maintain a live, bidirectional link to the backend — no polling gaps.
+- It has to survive aggressive OEM battery/process managers that terminate background
+  services.
+- Remote control (input, desktop streaming, app management) must work across a wide
+  range of devices with different capabilities and permission levels.
+
+## What I Built
+
+- **Persistent MQTT connection.** An auto-reconnecting MQTT link to the backend broker
+  carries bidirectional command delivery, device telemetry, heartbeat, presence
+  signals, and app-inventory publishing.
+- **WebRTC remote desktop.** Live screen streaming via Android `MediaProjection` at
+  24 fps with adaptive bitrate, using MQTT as the signaling channel and dedicated data
+  channels for remote input, clipboard sync, and focus state.
+- **Four-tier remote-input pipeline.** Remote input automatically selects the best
+  available backend per device: native `injectInputEvent`, the Accessibility Service
+  gesture API, a custom transparent IME for text-field input, and a root shell as a
+  last resort.
+- **Full device control.** App install / uninstall / suspend, app-policy rules,
+  network domain blocking, and peripheral controls via the Android Device Policy
+  Manager in **Device Owner** mode.
+- **Dual-mode OTA updates.** An update engine supporting both admin-pushed updates and
+  catalog-driven self-update, with download progress streamed to the dashboard over a
+  dedicated MQTT topic.
+- **OEM hardening.** A watchdog companion service, boot receiver, WorkManager
+  scheduling, and Doze-mode mitigation keep the agent alive against aggressive process
+  managers on Xiaomi MIUI, Huawei EMUI, and Oppo ColorOS.
+
+## Architecture
+
+- **Kotlin** agent running as a foreground + watchdog service pair.
+- **MQTT** for the always-on command / telemetry channel and WebRTC signaling.
+- **WebRTC** (MediaProjection capture, adaptive bitrate) for remote desktop and input
+  data channels.
+- **Android Device Policy Manager** (Device Owner) for MDM capabilities.
+- **Accessibility Service + custom IME + root fallback** for the tiered input pipeline.
+- **WorkManager + boot receiver + watchdog** for lifecycle resilience.
+
+## Outcome
+
+The agent gives administrators reliable, real-time visibility and control over their
+Android fleet — remote desktop, remote input, policy enforcement, and OTA updates —
+while staying resilient on the exact low-end and OEM-locked hardware where naive
+background services silently die.

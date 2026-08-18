@@ -32,6 +32,7 @@ type Metadata = {
   team: Team[];
   link?: string;
   cover?: Cover;
+  priority?: number;
 };
 
 import { notFound } from "next/navigation";
@@ -62,6 +63,7 @@ function readMDXFile(filePath: string) {
     team: data.team || [],
     link: data.link || "",
     cover: data.cover || undefined,
+    priority: typeof data.priority === "number" ? data.priority : 0,
   };
 
   return { metadata, content };

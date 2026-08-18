@@ -1,6 +1,7 @@
 ---
 title: "Feggyfy – AI-powered Crop Disease Detection"
 publishedAt: "2025-03-01"
+priority: 80
 summary: "An Android application using Jetpack Compose and TensorFlow Lite to detect crop diseases with >70% accuracy, validated by farming experts."
 images:
   - "/images/projects/feggyfy/1.jpg"
@@ -20,16 +21,17 @@ Feggyfy is an Android app built to assist farmers in early detection of crop dis
 
 ## Key Features
 
-- **Jetpack Compose & CameraX**: Developed modern UI and integrated real-time image capture.
-- **AI-powered Detection**: Implemented MobileNetV2 CNN with >70% accuracy.
-- **Transfer Learning**: Built a custom dataset and applied transfer learning for model optimization.
+- **Real-time Detection**: Built with TensorFlow Lite integrated with MediaPipe on CameraX for seamless on-device analysis.
+- **AI-powered Detection**: Implemented a MobileNetV2 CNN with transfer learning, reaching >70% accuracy.
+- **Treatment Recommendations**: Provided actionable guidance on managing detected diseases to support farmers.
+- **Scan History**: Stored past scan results in Firebase for tracking over time.
 - **User Validation**: Verified predictions with local farming experts (100% accuracy on 20 test images).
 
 ## Technologies Used
 
 - Kotlin, Jetpack Compose, Clean Architecture, MVVM
-- TensorFlow Lite, CameraX
-- Firebase for backend integration
+- TensorFlow Lite, MediaPipe, CameraX
+- Firebase for scan-history storage and backend integration
 
 ## Outcome
 

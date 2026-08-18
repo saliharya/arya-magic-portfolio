@@ -1,0 +1,62 @@
+---
+title: "Digital Signage Platform (Android)"
+publishedAt: "2026-02-01"
+priority: 90
+summary: "Android-powered digital signage running 24/7 for government and enterprise clients, driven by a live CMS — deployed for BNI, AntaraNews, and Imigrasi."
+images:
+  - "/images/projects/signage/1.png"
+  - "/images/projects/signage/2.png"
+  - "/images/projects/signage/3.png"
+team:
+  - name: "Salih Arya Gumilang"
+    role: "Android Developer (Kotlin)"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://linkedin.com/in/aryagumilang/"
+link: ""
+---
+
+> **Note:** Built at PT Sentuh Digital Teknologi. Client names shown (BNI, AntaraNews,
+> Imigrasi) are the public deployments; internal details are withheld. Screenshots are
+> placeholders — real displays to be added.
+
+## Overview
+
+I build the Android side of Sentuh's **digital signage** product line — always-on
+displays that render live, remotely-managed content in banks, newsrooms, and
+government offices. The screens pull their content from a central **CMS** so operators
+can update what's shown across a fleet without touching the hardware.
+
+## The Challenge
+
+Signage hardware sits unattended for weeks and has to *never* show a blank or frozen
+screen in a public-facing lobby. The app had to:
+
+- Run **24/7** on low-cost Android media players with long uptime.
+- Reflect **CMS content changes in real time**, and degrade gracefully when the
+  network drops (cache the last-good playlist, keep playing).
+- Support **multiple content types** — scheduled playlists, live feeds, queue/info
+  boards — across different client deployments from one codebase.
+
+## What I Built
+
+- **Live CMS-driven rendering.** The player subscribes to content updates and swaps
+  playlists, media, and layouts on the fly, with offline caching so a dropped
+  connection never interrupts playback.
+- **Resilient always-on playback.** Watchdog and auto-restart handling, defensive
+  state management, and memory-conscious media loading for weeks of uptime.
+- **Configurable per-client layouts.** A shared rendering layer driven by
+  configuration powers different deployments (BNI, AntaraNews, Imigrasi) without
+  forking the app.
+
+## Architecture
+
+- **Kotlin + Jetpack Compose** for the display UI.
+- **Live CMS integration** over the network with local caching for offline resilience.
+- **MVVM + Clean Architecture** with Kotlin Flow for reactive content state.
+- Watchdog / boot-restart handling for unattended 24/7 operation.
+
+## Outcome
+
+The signage platform runs continuously across government and enterprise sites, showing
+always-fresh, centrally-managed content — reliable enough to sit unattended in
+public-facing lobbies for banks, a national news agency, and immigration offices.
