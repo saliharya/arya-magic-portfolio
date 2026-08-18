@@ -2,13 +2,13 @@
 
 import {
   AvatarGroup,
-  Carousel,
   Column,
   Flex,
   Heading,
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import { Carousel } from "./Carousel";
 
 interface ProjectCardProps {
   href: string;
